@@ -90,9 +90,9 @@ public class Main {
 			System.out.println("current" + currentTime);
 			// note!
 			int beforeGameStart=10;
-			int afterGameStart=15;
+			int afterGameStart=20+20;
 			int afterFirstHalfStart=45+15;
-			int afterSecondHalf=70; //95
+			int afterSecondHalf=70+20; //95
 			
 			if (((currentTime + beforeGameStart > newsTime) && (currentTime <= newsTime + afterGameStart)) || ((currentTime >= newsTime + afterFirstHalfStart) && (currentTime <= newsTime + afterSecondHalf))) {
 				/*Do d = new Do();

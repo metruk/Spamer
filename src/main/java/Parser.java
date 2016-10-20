@@ -33,7 +33,7 @@ public class Parser {
 	Captcha cap = new Captcha();
 	private static Logger logger = Logger.getLogger(Parser.class.getName());
 	private static int GROUP_SPAM_MIN_BORDER_FOLLOWERS=35000;
-	private static int GROUP_SPAM_MAX_BORDER_FOLLOWERS=900000;
+	private static int GROUP_SPAM_MAX_BORDER_FOLLOWERS=1000000;
 	public void groupConnector(List<String> groupHref, String commentPhoto,
 			String tinyHref, String apiToken) throws Exception {
 		String banStatus = "";
@@ -75,7 +75,7 @@ public class Parser {
 					String ownerId = entry.getKey();
 					String postId = entry.getValue();
 					// !!
-					int amountSpamComments=1;
+					int amountSpamComments=2;
 					for (int i = 0; i < amountSpamComments; i++) {
 						if (banStatus.contains("Access to status replies denied")) {
 							break;
@@ -107,30 +107,22 @@ public class Parser {
 		String vkHref = null;
 		headerAndHref.put("Чемпионат Европы","http://vk.com/search?c[q]=%D0%B5%D0%B2%D1%80%D0%BE%202016&c[section]=communities");
 		headerAndHref.put("Челси","http://vk.com/search?c[q]=%D1%87%D0%B5%D0%BB%D1%81%D0%B8&c[section]=communities");
-		//headerAndHref.put("Арсенал","http://vk.com/search?c[q]=arsenal&c[section]=communities");
+		headerAndHref.put("Арсенал","http://vk.com/search?c[q]=arsenal&c[section]=communities");
 		headerAndHref.put("Манчестер Юнайтед","http://vk.com/search?c[q]=%D0%BC%D0%B0%D0%BD%D1%87%D0%B5%D1%81%D1%82%D0%B5%D1%80%20%D1%8E%D0%BD%D0%B0%D0%B9%D1%82%D0%B5%D0%B4&c[section]=communities");
 		headerAndHref.put("Манчестер Сити","http://vk.com/search?c[q]=%D0%BC%D0%B0%D0%BD%D1%87%D0%B5%D1%81%D1%82%D0%B5%D1%80%20%D1%81%D0%B8%D1%82%D0%B8&c[section]=communities");
-		//headerAndHref.put("Ливерпуль","http://vk.com/search?c[q]=%D0%BB%D0%B8%D0%B2%D0%B5%D1%80%D0%BF%D1%83%D0%BB%D1%8C&c[section]=communities");
-		//headerAndHref.put("Тоттенхэм","http://vk.com/search?c[q]=тоттенхэм&c[section]=communities");
-		headerAndHref.put("Лестер",	"http://vk.com/search?c[q]=%D0%BB%D0%B5%D1%81%D1%82%D0%B5%D1%80&c[section]=communities");
-		headerAndHref.put("Севилья","http://vk.com/search?c[q]=%D0%A1%D0%B5%D0%B2%D0%B8%D0%BB%D1%8C%D1%8F%20%D1%84%D0%BA&c[section]=communities");
+		headerAndHref.put("Ливерпуль","http://vk.com/search?c[q]=%D0%BB%D0%B8%D0%B2%D0%B5%D1%80%D0%BF%D1%83%D0%BB%D1%8C&c[section]=communities");
 		headerAndHref.put("Реал Мадрид","http://vk.com/search?c[q]=%D1%80%D0%B5%D0%B0%D0%BB%20%D0%BC%D0%B0%D0%B4%D1%80%D0%B8%D0%B4&c[section]=communities");
 		headerAndHref.put("Атлетико Мадрид","http://vk.com/search?c[q]=%D0%B0%D1%82%D0%BB%D0%B5%D1%82%D0%B8%D0%BA%D0%BE%20%D0%BC%D0%B0%D0%B4%D1%80%D0%B8%D0%B4&c[section]=communities");
 		headerAndHref.put("Барселона","http://vk.com/search?c[q]=%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D0%B0&c[section]=communities");
-		//headerAndHref.put("Хоккей","http://vk.com/search?c[q]=%D1%85%D0%BE%D0%BA%D0%BA%D0%B5%D0%B9&c[section]=communities");
-		//headerAndHref.put("Милан","http://vk.com/search?c[q]=ac%20milan&c[section]=communities");
-		headerAndHref.put("Интер","http://vk.com/search?c[q]=inter%20fc&c[section]=communities");
-		//headerAndHref.put("Ювентус","http://vk.com/search?c[q]=%D1%8E%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81&c[section]=communities");
-		//headerAndHref.put("Бавария","http://vk.com/search?c[q]=bayern&c[section]=communities");
-		//headerAndHref.put("ПСЖ","http://vk.com/search?c[q]=%D0%9F%D0%A1%D0%96&c[section]=communities");
+		headerAndHref.put("Милан","http://vk.com/search?c[q]=ac%20milan&c[section]=communities");
+		headerAndHref.put("Ювентус","http://vk.com/search?c[q]=%D1%8E%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81&c[section]=communities");
+		headerAndHref.put("Бавария","http://vk.com/search?c[q]=bayern&c[section]=communities");
 		headerAndHref.put("Боруссия Дортмунд","http://vk.com/search?c[q]=%D0%91%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D1%8F%20%D0%94%D0%BE%D1%80%D1%82%D0%BC%D1%83%D0%BD%D0%B4&c[section]=communities");
 		headerAndHref.put("Зенит","http://vk.com/search?c[q]=%D0%B7%D0%B5%D0%BD%D0%B8%D1%82%20%D1%84%D0%BA&c[section]=communities");
-		//headerAndHref.put("Локомотив","http://vk.com/search?c[q]=%D0%BB%D0%BE%D0%BA%D0%BE%D0%BC%D0%BE%D1%82%D0%B8%D0%B2&c[section]=communities");
-		//headerAndHref.put("ЦСКА","http://vk.com/search?c[q]=%D0%BF%D1%84%D0%BA%20%D0%A6%D0%A1%D0%9A%D0%90%20&c[section]=communities");
-		headerAndHref.put("Динамо Москва","http://vk.com/search?c[q]=%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%20%D1%84%D0%BA&c[section]=communities");
+		headerAndHref.put("Локомотив","http://vk.com/search?c[q]=%D0%BB%D0%BE%D0%BA%D0%BE%D0%BC%D0%BE%D1%82%D0%B8%D0%B2&c[section]=communities");
+		headerAndHref.put("ЦСКА","http://vk.com/search?c[q]=%D0%BF%D1%84%D0%BA%20%D0%A6%D0%A1%D0%9A%D0%90%20&c[section]=communities");
 		headerAndHref.put("Спартак","http://vk.com/search?c[q]=%D1%81%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BA%20%D1%84%D0%BA&c[section]=communities");
-		//headerAndHref.put("Краснодар","http://vk.com/search?c[q]=%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%20%D1%84%D0%BA&c[section]=communities");
-		headerAndHref.put("Рубин","http://vk.com/search?c[q]=%D1%80%D1%83%D0%B1%D0%B8%D0%BD%20%D1%84%D0%BA&c[section]=communities");
+		//headerAndHref.put("Рубин","http://vk.com/search?c[q]=%D1%80%D1%83%D0%B1%D0%B8%D0%BD%20%D1%84%D0%BA&c[section]=communities");
 		headerAndHref.put("Анжи","http://vk.com/search?c[q]=%D1%84%D0%BA%20%D0%90%D0%BD%D0%B6%D0%B8&c[section]=communities");
 		
 			for (Map.Entry<String, String> entry : headerAndHref.entrySet()) {
